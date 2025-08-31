@@ -8,6 +8,9 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
+  <!-- Font Awesome pour icônes -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
   <!-- Calendly CSS -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
@@ -16,7 +19,7 @@
     * {margin:0; padding:0; box-sizing:border-box;}
     body {font-family:'Poppins', sans-serif; background:#fdfdfd; color:#333; line-height:1.6;}
     a {text-decoration:none; color:inherit;}
-
+    
     /* Header */
     header {
       position: fixed; top:0; width:100%; background:#111; color:white;
@@ -25,25 +28,26 @@
     header h1 {font-size:24px; color:#f7c04a;}
     nav a {margin:0 15px; color:white; transition:0.3s;}
     nav a:hover {color:#f7c04a;}
-
+    
     /* Hero */
     .hero {
       height:100vh;
-      background: url('https://www.sequenceparis.com/wp-content/uploads/sequence-hair-salon-paris.jpg') center/cover no-repeat;
+      background: url('https://www.parisjetaime.com/wp-content/uploads/2021/03/salons-coiffure-beaute.jpg') center/cover no-repeat;
       display:flex; align-items:center; justify-content:center; text-align:center; color:white; flex-direction:column;
       padding:0 20px;
+      animation: fadeIn 1.5s ease;
     }
     .hero h2 {font-size:48px; margin-bottom:20px; text-shadow:2px 2px 8px rgba(0,0,0,0.6);}
     .hero button {
       background:#f7c04a; border:none; padding:15px 30px; font-size:20px;
       border-radius:50px; cursor:pointer; transition:0.3s; font-weight:600;
     }
-    .hero button:hover {background:#e2a600;}
-
+    .hero button:hover {background:#e2a600; transform:scale(1.05);}
+    
     /* Sections */
-    section {padding:100px 10%;}
+    section {padding:100px 10%; animation: fadeIn 1.5s ease;}
     section h2 {text-align:center; margin-bottom:50px; font-size:36px; color:#d35400;}
-
+    
     /* Services */
     .services {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px;}
     .service-card {
@@ -53,103 +57,135 @@
     .service-card:hover {transform:translateY(-10px); box-shadow:0 10px 30px rgba(0,0,0,0.15);}
     .service-card h3 {margin-bottom:10px; color:#d35400;}
     .service-card p {color:#555;}
-
+    
     /* Galerie */
     .gallery {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}
     .gallery img {width:100%; border-radius:15px; transition:0.3s;}
     .gallery img:hover {transform:scale(1.05);}
-
+    
+    /* Avis */
+    .avis {display:flex; flex-wrap:wrap; justify-content:space-around; gap:20px;}
+    .avis-item {background:#f9f9f9; padding:20px; border-radius:10px; width:30%; box-shadow:0 4px 8px rgba(0,0,0,0.1);}
+    
     /* Contact */
     .contact {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px; text-align:center;}
     .contact h3 {color:#d35400; margin-bottom:10px;}
     .contact p {color:#555;}
-
+    .contact i {color:#d35400; margin-right:8px;}
+    
     /* Footer */
     footer {background:#111; color:white; text-align:center; padding:30px; margin-top:50px;}
-
+    footer i {margin-right:5px;}
+    
+    /* Animations */
+    @keyframes fadeIn {from {opacity:0;} to {opacity:1;}}
+    
     /* Responsive */
     @media(max-width:768px){
       header {flex-direction:column;}
       nav {margin-top:10px;}
       .hero h2 {font-size:36px;}
+      .avis-item {width:80%;}
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Salon Éclat</h1>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#galerie">Galerie</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h1>Sarah Coiff</h1>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#avis">Avis</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <div class="hero">
-    <h2>Offrez-vous une nouvelle allure</h2>
-    <button id="rdv">Prendre rendez-vous</button>
+<div class="hero">
+  <h2>Offrez-vous une nouvelle allure !</h2>
+  <button id="rdv">Prendre rendez-vous</button>
+</div>
+
+<section id="services">
+  <h2>Nos Services</h2>
+  <div class="services">
+    <div class="service-card">
+      <h3>Coupe & Brushing</h3>
+      <p>Des coupes modernes adaptées à votre style.</p>
+    </div>
+    <div class="service-card">
+      <h3>Coloration</h3>
+      <p>Des couleurs éclatantes et naturelles.</p>
+    </div>
+    <div class="service-card">
+      <h3>Soins Capillaires</h3>
+      <p>Réparez et sublimez vos cheveux pour une meilleure apparence.</p>
+    </div>
   </div>
+</section>
 
-  <section id="services">
-    <h2>Nos Services</h2>
-    <div class="services">
-      <div class="service-card">
-        <h3>Coupe & Brushing</h3>
-        <p>Des coupes modernes adaptées à votre style.</p>
-      </div>
-      <div class="service-card">
-        <h3>Coloration</h3>
-        <p>Des couleurs éclatantes et naturelles.</p>
-      </div>
-      <div class="service-card">
-        <h3>Soins Capillaires</h3>
-        <p>Réparez et sublimez vos cheveux pour une meilleure apparence.</p>
-      </div>
+<section id="galerie">
+  <h2>Notre Galerie</h2>
+  <div class="gallery">
+    <img src="https://www.le52lille.com/wp-content/uploads/2021/02/Capture-de%CC%81cran-2021-02-10-a%CC%80-19.36.04.png" alt="Coupe 2">
+    <img src="https://www.le52lille.com/wp-content/uploads/2020/07/Le-52-De%CC%81cembre-2019-24.jpeg" alt="Coupe 3">
+    <img src="https://www.le52lille.com/wp-content/uploads/2020/07/le52-07.jpg" alt="Coupe 4">
+  </div>
+</section>
+
+<section id="avis">
+  <h2>Avis de nos clients</h2>
+  <div class="avis">
+    <div class="avis-item">
+      <p>"Super accueil, coupe parfaite, je recommande !"</p>
+      <p>- Marie L.</p>
     </div>
-  </section>
-
-  <section id="galerie">
-    <h2>Notre Galerie</h2>
-    <div class="gallery">
-      <img src="https://www.le52lille.com/wp-content/uploads/2021/02/Capture-de%CC%81cran-2021-02-10-a%CC%80-19.36.04.png" alt="Coupe 2">
-      <img src="https://www.le52lille.com/wp-content/uploads/2020/07/Le-52-De%CC%81cembre-2019-24.jpeg" alt="Coupe 3">
-      <img src="https://www.le52lille.com/wp-content/uploads/2020/07/le52-07.jpg" alt="Coupe 4">
+    <div class="avis-item">
+      <p>"Très professionnel, je reviendrai sans hésiter."</p>
+      <p>- Lucas P.</p>
     </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact">
-      <div>
-        <h3>Adresse</h3>
-        <p>13 Rue de Brunoy , 91480 Quincy-sous-Sénart </p>
-      </div>
-      <div>
-        <h3>Téléphone</h3>
-        <p>+33 6 62 18 40 67</p>
-      </div>
-      <div>
-        <h3>Email</h3>
-        <p>contact@Sarahcoiff.fr</p>
-      </div>
+    <div class="avis-item">
+      <p>"Cadre agréable et service au top !"</p>
+      <p>- Sarah D.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2025 Sarah Coiff - Tous droits réservés</p>
-  </footer>
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact">
+    <div>
+      <h3><i class="fas fa-map-marker-alt"></i>Adresse</h3>
+      <p>13 Rue de Brunoy, 91480 Quincy-sous-Sénart</p>
+    </div>
+    <div>
+      <h3><i class="fas fa-phone-alt"></i>Téléphone</h3>
+      <p>+33 6 62 18 40 67</p>
+    </div>
+    <div>
+      <h3><i class="fas fa-envelope"></i>Email</h3>
+      <p>contact@Sarahcoiff.fr</p>
+    </div>
+  </div>
+</section>
 
-  <!-- Calendly Script -->
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-  <script>
-    document.getElementById("rdv").addEventListener("click", function() {
-      Calendly.initPopupWidget({ url: 'https://calendly.com/mohammedbahria03/30min' });
-      return false;
-    });
-  </script>
+<footer>
+  <p>© 2025 Sarah Coiff - Tous droits réservés</p>
+  <p><i class="fas fa-credit-card"></i> Paiement CB accepté</p>
+</footer>
+
+<!-- Calendly Script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script>
+  document.getElementById("rdv").addEventListener("click", function() {
+    Calendly.initPopupWidget({ url: 'https://calendly.com/mohammedbahria03/30min' });
+    return false;
+  });
+</script>
 
 </body>
 </html>
+
+
 
 
