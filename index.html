@@ -176,13 +176,23 @@ footer a:hover {text-decoration:underline;}
     <h3>Email</h3>
     <p>contact@Sarahcoiff.fr</p>
   </div>
-</div>
-</section>
-
+</
 <footer>
-<p>© 2025 Sarah Coiff - Tous droits réservés</p>
-<p>💳 Paiement CB accepté</p>
-<p>Site réalisé par MG SERVICES</p>
+  <p>© 2025 Sarah Coiff - Tous droits réservés</p>
+  <p>💳 Paiement CB accepté</p>
+  <p>Site réalisé par <a href="https://tonsitepro.com" target="_blank">MG SERVICES</a></p>
+</footer>
+
+<!-- Calendly Script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script>
+  document.getElementById("rdv").addEventListener("click", function() {
+    Calendly.initPopupWidget({ url: 'https://calendly.com/mohammedbahria03/30min' });
+    return false;
+  });
+</script>
+</body>
+</html>
 
 
 
