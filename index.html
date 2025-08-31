@@ -3,102 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Salon Éclat 92 </title>
+  <title>Sarah Coiff</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Calendly CSS -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #fdfdfd;
-      color: #333;
-    }
+    /* Reset et global */
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family:'Poppins', sans-serif; background:#fdfdfd; color:#333; line-height:1.6;}
+    a {text-decoration:none; color:inherit;}
+
+    /* Header */
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #111;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 40px;
-      z-index: 1000;
+      position: fixed; top:0; width:100%; background:#111; color:white;
+      display:flex; justify-content:space-between; align-items:center; padding:15px 40px; z-index:1000;
     }
-    header h1 {
-      font-size: 22px;
-      color: #f7c04a;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      color: #f7c04a;
-    }
+    header h1 {font-size:24px; color:#f7c04a;}
+    nav a {margin:0 15px; color:white; transition:0.3s;}
+    nav a:hover {color:#f7c04a;}
+
+    /* Hero */
     .hero {
-      height: 100vh;
-      background: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.sequenceparis.com%2Fsequence-hair-salon-paris-mon-blog-francophone-du-coiffeur-de-paris%2F%3Fsrsltid%3DAfmBOopjXSTqj-XzkcJRV5I8jO7Px8ypISMkg-PlL6NqKJUOlnttaTSG&psig=AOvVaw1oJE-TsbTNcD0iq9muzQwM&ust=1756685219802000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCODNksngs48DFQAAAAAdAAAAABAE') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
+      height:100vh;
+      background: url('https://www.sequenceparis.com/wp-content/uploads/sequence-hair-salon-paris.jpg') center/cover no-repeat;
+      display:flex; align-items:center; justify-content:center; text-align:center; color:white; flex-direction:column;
+      padding:0 20px;
     }
-    .hero h2 {
-      font-size: 48px;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-    }
+    .hero h2 {font-size:48px; margin-bottom:20px; text-shadow:2px 2px 8px rgba(0,0,0,0.6);}
     .hero button {
-      background: #f7c04a;
-      border: none;
-      padding: 12px 25px;
-      font-size: 18px;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: 0.3s;
+      background:#f7c04a; border:none; padding:15px 30px; font-size:20px;
+      border-radius:50px; cursor:pointer; transition:0.3s; font-weight:600;
     }
-    .hero button:hover {
-      background: #e2a600;
-    }
-    section {
-      padding: 80px 15%;
-    }
-    .services, .contact {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
+    .hero button:hover {background:#e2a600;}
+
+    /* Sections */
+    section {padding:100px 10%;}
+    section h2 {text-align:center; margin-bottom:50px; font-size:36px; color:#d35400;}
+
+    /* Services */
+    .services {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px;}
     .service-card {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      transition: 0.3s;
-      text-align: center;
+      background:white; padding:30px; border-radius:20px; box-shadow:0 5px 25px rgba(0,0,0,0.1);
+      text-align:center; transition:0.3s;
     }
-    .service-card:hover {
-      transform: translateY(-10px);
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 30px;
+    .service-card:hover {transform:translateY(-10px); box-shadow:0 10px 30px rgba(0,0,0,0.15);}
+    .service-card h3 {margin-bottom:10px; color:#d35400;}
+    .service-card p {color:#555;}
+
+    /* Galerie */
+    .gallery {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}
+    .gallery img {width:100%; border-radius:15px; transition:0.3s;}
+    .gallery img:hover {transform:scale(1.05);}
+
+    /* Contact */
+    .contact {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px; text-align:center;}
+    .contact h3 {color:#d35400; margin-bottom:10px;}
+    .contact p {color:#555;}
+
+    /* Footer */
+    footer {background:#111; color:white; text-align:center; padding:30px; margin-top:50px;}
+
+    /* Responsive */
+    @media(max-width:768px){
+      header {flex-direction:column;}
+      nav {margin-top:10px;}
+      .hero h2 {font-size:36px;}
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Salon Éclat</h1>
     <nav>
@@ -109,10 +87,8 @@
   </header>
 
   <div class="hero">
-    <div>
-      <h2>Offrez-vous une nouvelle allure</h2>
-      <button>Prendre rendez-vous</button>
-    </div>
+    <h2>Offrez-vous une nouvelle allure</h2>
+    <button id="rdv">Prendre rendez-vous</button>
   </div>
 
   <section id="services">
@@ -128,7 +104,7 @@
       </div>
       <div class="service-card">
         <h3>Soins Capillaires</h3>
-        <p>Réparez et sublimez vos cheveux pour une meilleure apparence ! .</p>
+        <p>Réparez et sublimez vos cheveux pour une meilleure apparence.</p>
       </div>
     </div>
   </section>
@@ -147,22 +123,32 @@
     <div class="contact">
       <div>
         <h3>Adresse</h3>
-        <p>13 rue du garderie ,91800 boussy st antoine</p>
+        <p>13 Rue de Brunoy , 91480 Quincy-sous-Sénart </p>
       </div>
       <div>
         <h3>Téléphone</h3>
-        <p>+33 6 12 34 56 78</p>
+        <p>+33 6 62 18 40 67</p>
       </div>
       <div>
         <h3>Email</h3>
-        <p>contact@saloneclat92gr.fr</p>
+        <p>contact@Sarahcoiff.fr</p>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Salon Éclat 92 - Tous droits réservés</p>
+    <p>© 2025 Sarah Coiff - Tous droits réservés</p>
   </footer>
+
+  <!-- Calendly Script -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <script>
+    document.getElementById("rdv").addEventListener("click", function() {
+      Calendly.initPopupWidget({ url: 'https://calendly.com/mohammedbahria03/30min' });
+      return false;
+    });
+  </script>
+
 </body>
 </html>
 
