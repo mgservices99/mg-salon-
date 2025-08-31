@@ -1,100 +1,94 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarah Coiff</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarah Coiff - Salon Haut de Gamme</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome pour icônes -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<!-- Calendly CSS -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
-  <!-- Calendly CSS -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family:'Poppins', sans-serif; background:#fafafa; color:#333; line-height:1.6;}
 
-  <style>
-    /* Reset et global */
-    * {margin:0; padding:0; box-sizing:border-box;}
-    body {font-family:'Poppins', sans-serif; background:#fdfdfd; color:#333; line-height:1.6;}
-    a {text-decoration:none; color:inherit;}
-    
-    /* Header */
-    header {
-      position: fixed; top:0; width:100%; background:#111; color:white;
-      display:flex; justify-content:space-between; align-items:center; padding:15px 40px; z-index:1000;
-    }
-    header h1 {font-size:24px; color:#f7c04a;}
-    nav a {margin:0 15px; color:white; transition:0.3s;}
-    nav a:hover {color:#f7c04a;}
-    
-    /* Hero */
-    .hero {
-      height:100vh;
-      background: url('https://www.parisjetaime.com/wp-content/uploads/2021/03/salons-coiffure-beaute.jpg') center/cover no-repeat;
-      display:flex; align-items:center; justify-content:center; text-align:center; color:white; flex-direction:column;
-      padding:0 20px;
-      animation: fadeIn 1.5s ease;
-    }
-    .hero h2 {font-size:48px; margin-bottom:20px; text-shadow:2px 2px 8px rgba(0,0,0,0.6);}
-    .hero button {
-      background:#f7c04a; border:none; padding:15px 30px; font-size:20px;
-      border-radius:50px; cursor:pointer; transition:0.3s; font-weight:600;
-    }
-    .hero button:hover {background:#e2a600; transform:scale(1.05);}
-    
-    /* Sections */
-    section {padding:100px 10%; animation: fadeIn 1.5s ease;}
-    section h2 {text-align:center; margin-bottom:50px; font-size:36px; color:#d35400;}
-    
-    /* Services */
-    .services {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px;}
-    .service-card {
-      background:white; padding:30px; border-radius:20px; box-shadow:0 5px 25px rgba(0,0,0,0.1);
-      text-align:center; transition:0.3s;
-    }
-    .service-card:hover {transform:translateY(-10px); box-shadow:0 10px 30px rgba(0,0,0,0.15);}
-    .service-card h3 {margin-bottom:10px; color:#d35400;}
-    .service-card p {color:#555;}
-    
-    /* Galerie */
-    .gallery {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}
-    .gallery img {width:100%; border-radius:15px; transition:0.3s;}
-    .gallery img:hover {transform:scale(1.05);}
-    
-    /* Avis */
-    .avis {display:flex; flex-wrap:wrap; justify-content:space-around; gap:20px;}
-    .avis-item {background:#f9f9f9; padding:20px; border-radius:10px; width:30%; box-shadow:0 4px 8px rgba(0,0,0,0.1);}
-    
-    /* Contact */
-    .contact {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px; text-align:center;}
-    .contact h3 {color:#d35400; margin-bottom:10px;}
-    .contact p {color:#555;}
-    .contact i {color:#d35400; margin-right:8px;}
-    
-    /* Footer */
-    footer {background:#111; color:white; text-align:center; padding:30px; margin-top:50px;}
-    footer i {margin-right:5px;}
-    
-    /* Animations */
-    @keyframes fadeIn {from {opacity:0;} to {opacity:1;}}
-    
-    /* Responsive */
-    @media(max-width:768px){
-      header {flex-direction:column;}
-      nav {margin-top:10px;}
-      .hero h2 {font-size:36px;}
-      .avis-item {width:80%;}
-    }
-  </style>
+header {
+  position: fixed; top:0; left:0; right:0; background:#111; color:white;
+  display:flex; justify-content:space-between; align-items:center; padding:15px 40px; z-index:1000;
+}
+header h1 {font-size:28px; color:#f7c04a; cursor:pointer;}
+nav a {margin:0 15px; color:white; font-weight:500; transition:0.3s;}
+nav a:hover {color:#f7c04a;}
+
+.hero {
+  height:100vh; background: url('hero.jpg') center/cover no-repeat; display:flex;
+  align-items:center; justify-content:center; text-align:center; color:white; flex-direction:column;
+  position:relative; overflow:hidden;
+}
+.hero::after {
+  content:""; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5);
+}
+.hero-content {position:relative; z-index:2; animation:fadeInUp 1s ease forwards;}
+.hero h2 {font-size:52px; margin-bottom:20px; text-shadow:2px 2px 12px rgba(0,0,0,0.7);}
+.hero p {font-size:20px; margin-bottom:30px; text-shadow:1px 1px 6px rgba(0,0,0,0.5);}
+.hero button {background:#f7c04a; border:none; padding:18px 40px; font-size:22px; border-radius:50px; cursor:pointer; font-weight:600; transition:0.3s;}
+.hero button:hover {background:#e2a600;}
+
+@keyframes fadeInUp {0% {opacity:0; transform:translateY(30px);} 100% {opacity:1; transform:translateY(0);}}
+
+section {padding:120px 10%;}
+section h2 {text-align:center; margin-bottom:50px; font-size:40px; color:#d35400; position:relative;}
+section h2::after {content:""; width:80px; height:3px; background:#f7c04a; display:block; margin:10px auto 0; border-radius:2px;}
+
+.services {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px;}
+.service-card {
+  background:white; padding:30px; border-radius:20px; box-shadow:0 10px 35px rgba(0,0,0,0.08);
+  text-align:center; transition:0.3s; cursor:pointer;
+}
+.service-card:hover {transform:translateY(-10px); box-shadow:0 15px 40px rgba(0,0,0,0.15);}
+.service-card h3 {margin-bottom:10px; color:#d35400;}
+.service-card p {color:#555;}
+.service-card .price {font-weight:700; margin-top:10px; font-size:18px; color:#111;}
+
+.gallery {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}
+.gallery img {width:100%; border-radius:15px; transition:0.3s;}
+.gallery img:hover {transform:scale(1.05);}
+
+.avis {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}
+.avis-card {
+  background:white; padding:25px; border-radius:15px; box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  text-align:center; transition:0.3s;
+}
+.avis-card:hover {transform:translateY(-5px); box-shadow:0 12px 30px rgba(0,0,0,0.12);}
+.avis-card h3 {color:#d35400; margin-bottom:10px;}
+.avis-card p {color:#555; font-style:italic;}
+
+.contact {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px; text-align:center;}
+.contact h3 {color:#d35400; margin-bottom:10px;}
+.contact p {color:#555;}
+
+footer {background:#111; color:white; text-align:center; padding:30px; margin-top:50px;}
+footer a {color:#f7c04a; text-decoration:none;}
+footer a:hover {text-decoration:underline;}
+
+@media(max-width:768px){
+  header {flex-direction:column;}
+  nav {margin-top:10px;}
+  .hero h2 {font-size:36px;}
+  .hero p {font-size:18px;}
+}
+</style>
 </head>
+
 <body>
 
 <header>
   <h1>Sarah Coiff</h1>
   <nav>
-    <a href="#services">Services</a>
+    <a href="#services">Prestations</a>
     <a href="#galerie">Galerie</a>
     <a href="#avis">Avis</a>
     <a href="#contact">Contact</a>
@@ -102,89 +96,95 @@
 </header>
 
 <div class="hero">
-  <h2>Offrez-vous une nouvelle allure !</h2>
-  <button id="rdv">Prendre rendez-vous</button>
+  <div class="hero-content">
+    <h2>Salon Haut de Gamme</h2>
+    <p>Offrez-vous l’excellence et la qualité que vos cheveux méritent.</p>
+    <button id="rdv">Prendre rendez-vous</button>
+  </div>
 </div>
 
 <section id="services">
-  <h2>Nos Services</h2>
-  <div class="services">
-    <div class="service-card">
-      <h3>Coupe & Brushing</h3>
-      <p>Des coupes modernes adaptées à votre style.</p>
-    </div>
-    <div class="service-card">
-      <h3>Coloration</h3>
-      <p>Des couleurs éclatantes et naturelles.</p>
-    </div>
-    <div class="service-card">
-      <h3>Soins Capillaires</h3>
-      <p>Réparez et sublimez vos cheveux pour une meilleure apparence.</p>
-    </div>
+<h2>Prestations & Tarifs</h2>
+<div class="services">
+  <div class="service-card">
+    <h3>Coupe Homme</h3>
+    <p>Coupe stylée adaptée à votre morphologie</p>
+    <p class="price">25 €</p>
   </div>
+  <div class="service-card">
+    <h3>Coupe Femme</h3>
+    <p>Coupe moderne avec brushing inclus</p>
+    <p class="price">40 €</p>
+  </div>
+  <div class="service-card">
+    <h3>Coloration</h3>
+    <p>Couleurs éclatantes et naturelles</p>
+    <p class="price">60 €</p>
+  </div>
+  <div class="service-card">
+    <h3>Balayage</h3>
+    <p>Effet lumineux et naturel</p>
+    <p class="price">80 €</p>
+  </div>
+  <div class="service-card">
+    <h3>Soins Capillaires</h3>
+    <p>Réparation & nutrition en profondeur</p>
+    <p class="price">35 €</p>
+  </div>
+</div>
 </section>
 
 <section id="galerie">
-  <h2>Notre Galerie</h2>
-  <div class="gallery">
-    <img src="https://www.le52lille.com/wp-content/uploads/2021/02/Capture-de%CC%81cran-2021-02-10-a%CC%80-19.36.04.png" alt="Coupe 2">
-    <img src="https://www.le52lille.com/wp-content/uploads/2020/07/Le-52-De%CC%81cembre-2019-24.jpeg" alt="Coupe 3">
-    <img src="https://www.le52lille.com/wp-content/uploads/2020/07/le52-07.jpg" alt="Coupe 4">
-  </div>
+<h2>Notre Galerie</h2>
+<div class="gallery">
+  <img src="service1.jpg" alt="Service 1">
+  <img src="service2.jpg" alt="Service 2">
+  <img src="service3.jpg" alt="Service 3">
+</div>
 </section>
 
 <section id="avis">
-  <h2>Avis de nos clients</h2>
-  <div class="avis">
-    <div class="avis-item">
-      <p>"Super accueil, coupe parfaite, je recommande !"</p>
-      <p>- Marie L.</p>
-    </div>
-    <div class="avis-item">
-      <p>"Très professionnel, je reviendrai sans hésiter."</p>
-      <p>- Lucas P.</p>
-    </div>
-    <div class="avis-item">
-      <p>"Cadre agréable et service au top !"</p>
-      <p>- Sarah D.</p>
-    </div>
+<h2>Avis de nos clients</h2>
+<div class="avis">
+  <div class="avis-card">
+    <h3>Marie L.</h3>
+    <p>“Super accueil, coupe parfaite, je recommande !”</p>
   </div>
+  <div class="avis-card">
+    <h3>Lucas P.</h3>
+    <p>“Très professionnel, je reviendrai sans hésiter.”</p>
+  </div>
+  <div class="avis-card">
+    <h3>Sarah D.</h3>
+    <p>“Cadre agréable et service au top !”</p>
+  </div>
+</div>
 </section>
 
 <section id="contact">
-  <h2>Contact</h2>
-  <div class="contact">
-    <div>
-      <h3><i class="fas fa-map-marker-alt"></i>Adresse</h3>
-      <p>13 Rue de Brunoy, 91480 Quincy-sous-Sénart</p>
-    </div>
-    <div>
-      <h3><i class="fas fa-phone-alt"></i>Téléphone</h3>
-      <p>+33 6 62 18 40 67</p>
-    </div>
-    <div>
-      <h3><i class="fas fa-envelope"></i>Email</h3>
-      <p>contact@Sarahcoiff.fr</p>
-    </div>
+<h2>Contact</h2>
+<div class="contact">
+  <div>
+    <h3>Adresse</h3>
+    <p>13 Rue de Brunoy, 91480 Quincy-sous-Sénart</p>
   </div>
+  <div>
+    <h3>Téléphone</h3>
+    <p>+33 6 62 18 40 67</p>
+  </div>
+  <div>
+    <h3>Email</h3>
+    <p>contact@Sarahcoiff.fr</p>
+  </div>
+</div>
 </section>
 
 <footer>
-  <p>© 2025 Sarah Coiff - Tous droits réservés</p>
-  <p><i class="fas fa-credit-card"></i> Paiement CB accepté</p>
-</footer>
+<p>© 2025 Sarah Coiff - Tous droits réservés</p>
+<p>💳 Paiement CB accepté</p>
+<p>Site réalisé par MG SERVICES</p>
 
-<!-- Calendly Script -->
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-<script>
-  document.getElementById("rdv").addEventListener("click", function() {
-    Calendly.initPopupWidget({ url: 'https://calendly.com/mohammedbahria03/30min' });
-    return false;
-  });
-</script>
 
-</body>
-</html>
 
 
 
